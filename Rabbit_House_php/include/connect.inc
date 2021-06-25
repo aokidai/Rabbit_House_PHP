@@ -1,4 +1,5 @@
 <?php
+	$currency = '$';
 	$servername	=	"localhost";
 	$username	=	"root";
 	$pass		=	"";

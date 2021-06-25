@@ -62,7 +62,43 @@ else
 		font-weight: bold;"
 		margin-left: 50%;
 	}
-	
+#info1{
+    padding: 50px;
+}
+#info1 span{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+#info1 ul{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    list-style-type: none;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 30%;
+}
+#info1 ul li{
+    display: list-item;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    list-style-position:unset;
+    display: inline-block;
+    list-style-type:none;
+    line-height: 40px;
+    margin-left: -2px;
+    width: 120px;
+    height: 40px;
+}
+#info1 ul li a img{
+    width: 70px;
+    height: 70px;
+}
 </style>
 <body>
   <header>
@@ -108,10 +144,10 @@ else
 					while($row=mysqli_fetch_array($rs)){	
 			?>
 			<div id="mon">
-				<p id="tenMon"><a href="chitietmon.php"><?=$row["tenMon"]?></a></p>
+				<p id="tenMon"><a href="#"><?=$row["tenMon"]?></a></p>
 				<img id="hinhAnh" src="uploads/<?=$row["hinhAnh"]?>">
 				<p id="donGia">Đơn giá: <span><?=$row["gia"]?>VND</span></p>
-				<a href="#"><img id="nutmuahang" src="./img/Chonmua.png"></a></br>
+				<a href='hauGioHang.php?id=<?=$row["idMon"]?>'><img id="nutmuahang" src="./img/Chonmua.png"></a>
 			</div>
 		<?php }
 			else
@@ -120,7 +156,7 @@ else
 	   </br></br>		
 	  </section>  
 	  </br></br>
-  <div id="info" style="margin-top: 15px">
+  <div id="info1" style="margin-top: 15px">
 	   </br></br>
                 <span style="margin-top: 250px">Twitter</span>
                 <div id="cont-footer-twitter" style="padding 30px; float:left; margin-left:17%">

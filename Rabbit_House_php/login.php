@@ -47,10 +47,12 @@
 		 include "./include/connect.inc";
 		 $username	=	$_POST["txtusername"];
 		 $password	=	$_POST["txtpassword"];
-		 $sql		=	"select username, password from tblkhachhang where username='$username' and password='$password'";
+		 $sql		=	"select username, password, idKhachhang from tblkhachhang where username='$username' and password='$password'";
 		 $rs		=	mysqli_query($conn, $sql);
+		 $row			=	mysqli_fetch_array($rs);
 		 if(mysqli_num_rows($rs)>0){
-			 $_SESSION["username"]	= $username ;
+			 $_SESSION["username"]	= $row["username"] ;
+			 $_SESSION["idKhachhang"] = $row["idKhachhang"];
 			 echo"<script>window.location.href='index2.php'</script>";
 		 }
 		 else
